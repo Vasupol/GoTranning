@@ -119,7 +119,7 @@ func DeleteTaskHandler(db *gorm.DB) echo.HandlerFunc {
 
 		if err := db.Where("id = ?",id).Delete(&todo).Error; err != nil {
 			return c.JSON(http.StatusBadRequest, map[string]string{
-				"err": errors.Wrap(err, "update task").Error(),
+				"err": errors.Wrap(err, "delete task").Error(),
 			})
 		}
 
